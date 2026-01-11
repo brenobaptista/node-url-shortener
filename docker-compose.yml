@@ -3,7 +3,9 @@ services:
     image: docker.io/postgres:16-alpine
     restart: always
     environment:
-      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: urlshortener
     volumes:
       - data:/var/lib/postgresql/data
     healthcheck:
@@ -22,7 +24,7 @@ services:
       - "3000:3000"
     environment:
       PORT: 3000
-      DATABASE_URL: postgresql://postgres:mysecretpassword@database:5432/postgres
+      DATABASE_URL: postgresql://postgres:password@database:5432/urlshortener
       DATABASE_POOL_MAX: 10
     volumes:
       - .:/app:Z
