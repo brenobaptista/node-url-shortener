@@ -1,7 +1,11 @@
-FROM denoland/deno:alpine-1.25.3
+FROM docker.io/node:22-alpine
 
 WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm ci
+
 COPY . .
 
-CMD ["deno", "task", "start"]
+CMD ["npm", "start"]

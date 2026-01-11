@@ -1,59 +1,28 @@
-# Deno URL Shortener
+# Node URL Shortener
 
-> URL shortener service made using Deno
+> URL shortener service
 
 ## Getting Started
 
-### With Docker
-
-This solution uses Docker and Docker Compose to run the app and the database.
-Make sure you have both installed and running.
+This solution uses Docker and Docker Compose.
 
 ```
-1. Generate the .env file
-$ cp .env.example .env
+1. Run the service
+$ docker compose up
 
-2. Run the service with Compose
-$ docker compose up -d
-
-3. Create a new short URL
+2. Create a new short URL
 $ curl -X POST -H "Content-Type: application/json" \
     -d '{"original_url": "https://github.com/brenobaptista"}' \
-    http://localhost:8080/urls
+    http://localhost:3000/urls
 
-4. Get the original URL back
-$ curl http://localhost:8080/{hash}
+3. Get the original URL back
+$ curl http://localhost:3000/{hash}
 
-5.1. Stop and remove containers and networks created by "up" (keep volumes and images).
+4. Stop and remove containers and networks created by "up" (keep volumes and images).
 $ docker compose down
 
-5.2. Stop and remove containers, networks, images and volumes created by "up".
+4.1. Stop and remove containers, networks, images and volumes created by "up".
 $ docker compose down --rmi all -v
-```
-
-### Without Docker
-
-- An easy way to get a Postgres database running is using
-  [Railway](https://railway.app/) to provide a free database without signing up.
-- Or you can install Postgres locally and create a database.
-
-```
-1. Generate the .env file
-$ cp .env.example .env
-
-2. Update the .env file
-# DATABASE_URL=postgresql://{user}:{password}@{hostname}:{port}/{database-name}
-
-3. Start the API (Deno automatically detects and installs dependencies)
-$ deno task start
-
-4. Create a new short URL
-$ curl -X POST -H "Content-Type: application/json" \
-    -d '{"original_url": "https://github.com/brenobaptista"}' \
-    http://localhost:8080/urls
-
-5. Get the original URL back
-$ curl http://localhost:8080/{hash}
 ```
 
 ## Author
