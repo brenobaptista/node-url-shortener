@@ -28,6 +28,18 @@ $ docker compose down
 $ docker compose down --rmi all -v
 ```
 
+## Database Connection
+
+Connect to the PostgreSQL database using any SQL client (e.g., Beekeeper Studio, pgAdmin, DBeaver):
+
+| Property | Value         |
+| -------- | ------------- |
+| Host     | localhost     |
+| Port     | 5432          |
+| Database | url_shortener |
+| User     | postgres      |
+| Password | password      |
+
 ## Author
 
 | [![brenobaptista](https://avatars1.githubusercontent.com/u/47641641?s=120&v=4)](https://github.com/brenobaptista) |
