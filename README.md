@@ -37,7 +37,7 @@ Connect to the PostgreSQL database using any SQL client (e.g., Beekeeper Studio,
 | Host     | localhost     |
 | Port     | 5432          |
 | Database | url_shortener |
-| User     | postgres      |
+| User     | user          |
 | Password | password      |
 
 ## Author
