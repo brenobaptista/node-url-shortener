@@ -6,26 +6,26 @@
 
 This solution uses Docker and Docker Compose.
 
-```
-1. Install dependencies (required for development with hot reload)
-$ npm install
+```bash
+# Install dependencies (required for development with hot reload)
+npm install
 
-2. Run the service
-$ docker compose up
+# Run the service
+docker compose up
 
-3. Create a new short URL
-$ curl -X POST -H "Content-Type: application/json" \
+# Create a new short URL
+curl -X POST -H "Content-Type: application/json" \
     -d '{"original_url": "https://github.com/brenobaptista"}' \
     http://localhost:3000/urls
 
-4. Get the original URL back
-$ curl http://localhost:3000/{hash}
+# Get the original URL back
+curl http://localhost:3000/{hash}
 
-5. Stop and remove containers and networks created by "up" (keep volumes and images).
-$ docker compose down
+# Stop and remove containers and networks created by "up" (keep volumes and images).
+docker compose down
 
-5.1. Stop and remove containers, networks, images and volumes created by "up".
-$ docker compose down --rmi all -v
+# Stop and remove containers, networks, images and volumes created by "up".
+docker compose down --rmi all -v
 ```
 
 ## Database Connection
